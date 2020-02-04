@@ -1,0 +1,129 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="498,1440" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="21">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="15">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="458,1360" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="436,655" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+        <Variable x:TypeArguments="sd:DataTable" Name="ed" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'AmazoninI Page'" sap:VirtualizedContainerService.HintSize="414,376" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="d99693c8b9a8a7bb15d08654b0c2a30e" Selector="&lt;html title='Amazon.in: iphone' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,230" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExtractData ContinueOnError="True" DataTable="[ExtractDataTable]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'DIV  search'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl class='sg-row' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-20-of-24 sg-col-28-of-32 sg-col-16-of-20 sg-col s-right-column sg-col-32-of-36 sg-col-8-of-12 sg-col-12-of-16 sg-col-24-of-28' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='rush-component s-latency-cf-section' tag='span' idx='1' /&gt;&lt;webctrl class='s-result-list s-search-results sg-row' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-20-of-24 s-result-item sg-col-0-of-12 sg-col-28-of-32 sg-col-16-of-20 sg-col sg-col-32-of-36 sg-col-12-of-16 sg-col-24-of-28' tag='div' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='s-include-content-margin s-border-bottom' tag='div' idx='1' /&gt;&lt;webctrl class='a-section a-spacing-medium' tag='div' idx='1' /&gt;&lt;webctrl class='sg-row' tag='div' idx='2' /&gt;&lt;webctrl class='sg-col-4-of-12 sg-col-8-of-16 sg-col-16-of-24 sg-col-12-of-20 sg-col-24-of-32 sg-col sg-col-28-of-36 sg-col-20-of-28' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column attr='text' name='Column1' exact='1'&gt;&lt;webctrl class='sg-row' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-20-of-24 sg-col-28-of-32 sg-col-16-of-20 sg-col s-right-column sg-col-32-of-36 sg-col-8-of-12 sg-col-12-of-16 sg-col-24-of-28' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='rush-component s-latency-cf-section' tag='span' idx='1' /&gt;&lt;webctrl class='s-result-list s-search-results sg-row' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-20-of-24 s-result-item sg-col-0-of-12 sg-col-28-of-32 sg-col-16-of-20 sg-col sg-col-32-of-36 sg-col-12-of-16 sg-col-24-of-28' tag='div' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='s-include-content-margin s-border-bottom' tag='div' idx='1' /&gt;&lt;webctrl class='a-section a-spacing-medium' tag='div' idx='1' /&gt;&lt;webctrl class='sg-row' tag='div' idx='2' /&gt;&lt;webctrl class='sg-col-4-of-12 sg-col-8-of-16 sg-col-16-of-24 sg-col-12-of-20 sg-col-24-of-32 sg-col sg-col-28-of-36 sg-col-20-of-28' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='sg-row' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-4-of-12 sg-col-8-of-16 sg-col-12-of-32 sg-col-12-of-20 sg-col-12-of-36 sg-col sg-col-12-of-24 sg-col-12-of-28' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='a-section a-spacing-none' tag='div' idx='1' /&gt;&lt;webctrl class='a-size-mini a-spacing-none a-color-base s-line-clamp-2' tag='h2' idx='1' /&gt;&lt;webctrl class='a-link-normal a-text-normal' tag='a' idx='1' /&gt;&lt;webctrl class='a-size-medium a-color-base a-text-normal' tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column attr='text' name='Column2' exact='1'&gt;&lt;webctrl class='sg-row' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-20-of-24 sg-col-28-of-32 sg-col-16-of-20 sg-col s-right-column sg-col-32-of-36 sg-col-8-of-12 sg-col-12-of-16 sg-col-24-of-28' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='rush-component s-latency-cf-section' tag='span' idx='1' /&gt;&lt;webctrl class='s-result-list s-search-results sg-row' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-20-of-24 s-result-item sg-col-0-of-12 sg-col-28-of-32 sg-col-16-of-20 sg-col sg-col-32-of-36 sg-col-12-of-16 sg-col-24-of-28' tag='div' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='s-include-content-margin s-border-bottom' tag='div' idx='1' /&gt;&lt;webctrl class='a-section a-spacing-medium' tag='div' idx='1' /&gt;&lt;webctrl class='sg-row' tag='div' idx='2' /&gt;&lt;webctrl class='sg-col-4-of-12 sg-col-8-of-16 sg-col-16-of-24 sg-col-12-of-20 sg-col-24-of-32 sg-col sg-col-28-of-36 sg-col-20-of-28' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='sg-row' tag='div' idx='2' /&gt;&lt;webctrl class='sg-col-4-of-12 sg-col-6-of-20 sg-col-4-of-16 sg-col sg-col-6-of-36 sg-col-6-of-28 sg-col-6-of-32 sg-col-6-of-24' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='a-section a-spacing-none a-spacing-top-small' tag='div' idx='1' /&gt;&lt;webctrl class='a-row a-size-base a-color-base' tag='div' idx='1' /&gt;&lt;webctrl class='a-row' tag='div' idx='1' /&gt;&lt;webctrl class='a-size-base a-link-normal s-no-hover a-text-normal' tag='a' idx='1' /&gt;&lt;webctrl class='a-price' tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl class='a-price-whole' tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column attr='text' name='Column3' exact='1'&gt;&lt;webctrl class='sg-row' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-20-of-24 sg-col-28-of-32 sg-col-16-of-20 sg-col s-right-column sg-col-32-of-36 sg-col-8-of-12 sg-col-12-of-16 sg-col-24-of-28' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='rush-component s-latency-cf-section' tag='span' idx='1' /&gt;&lt;webctrl class='s-result-list s-search-results sg-row' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-20-of-24 s-result-item sg-col-0-of-12 sg-col-28-of-32 sg-col-16-of-20 sg-col sg-col-32-of-36 sg-col-12-of-16 sg-col-24-of-28' tag='div' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='s-include-content-margin s-border-bottom' tag='div' idx='1' /&gt;&lt;webctrl class='a-section a-spacing-medium' tag='div' idx='1' /&gt;&lt;webctrl class='sg-row' tag='div' idx='2' /&gt;&lt;webctrl class='sg-col-4-of-12 sg-col-8-of-16 sg-col-16-of-24 sg-col-12-of-20 sg-col-24-of-32 sg-col sg-col-28-of-36 sg-col-20-of-28' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='sg-row' tag='div' idx='2' /&gt;&lt;webctrl class='sg-col-4-of-12 sg-col-6-of-20 sg-col-4-of-16 sg-col sg-col-6-of-36 sg-col-6-of-28 sg-col-6-of-32 sg-col-6-of-24' tag='div' idx='1' /&gt;&lt;webctrl class='sg-col-inner' tag='div' idx='1' /&gt;&lt;webctrl class='a-section a-spacing-none a-spacing-top-small' tag='div' idx='1' /&gt;&lt;webctrl class='a-row a-size-base a-color-base' tag='div' idx='1' /&gt;&lt;webctrl class='a-row' tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" NextLinkSelector="&lt;webctrl aaname='Next→' parentid='search' tag='A' /&gt;">
+                <ui:ExtractData.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a91e73ae3ab4d783b79053311382e484" Selector="&lt;webctrl id='search' tag='DIV' /&gt;" WaitForReady="COMPLETE" />
+                </ui:ExtractData.Target>
+              </ui:ExtractData>
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+      <ui:WriteRange AddHeaders="False" DataTable="[ExtractDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="414,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet3" WorkbookPath="C:\Users\admin.admin-PC\Desktop\dataamazon.xlsx">
+        <ui:WriteRange.StartingCell>
+          <InArgument x:TypeArguments="x:String">
+            <Literal x:TypeArguments="x:String" Value="" />
+          </InArgument>
+        </ui:WriteRange.StartingCell>
+      </ui:WriteRange>
+    </Sequence>
+    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="436,541" sap2010:WorkflowViewState.IdRef="Sequence_11">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open https://www.amazon.com/" Hidden="False" sap:VirtualizedContainerService.HintSize="414,417" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" NewSession="True" Private="False" Url="https://www.amazon.com/">
+        <ui:OpenBrowser.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,318" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  twotabsearchtext...'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="False" SimulateType="True" Text="Iphone">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7ec45ba91b6276ddf577e5e7c332e853" Selector="&lt;webctrl id='twotabsearchtextbox' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT'" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="29" OffsetY="16" Position="TopLeft" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5f6cb7b49a5307fa08d432cb57c1b6e1" Selector="&lt;webctrl aaname='Go' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                </ui:Click.Target>
+              </ui:Click>
+            </Sequence>
+          </ActivityAction>
+        </ui:OpenBrowser.Body>
+      </ui:OpenBrowser>
+    </Sequence>
+  </Sequence>
+</Activity>
